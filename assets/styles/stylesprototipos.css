@@ -128,10 +128,10 @@ body {
   
   .footer {
     grid-area: footer;
-  }
-  .footer ul {
-    display: flex;
-    color: white;
+    text-align: center;
+    color: antiquewhite;
+    background-color: #111;
+    
   }
   
   .grid-container {
