@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    height: 100vh; /* probar con % y ver si hay diferencias */
+    width: 100vw; /* probar con % y ver si hay diferencias */
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  .header {
+    grid-area: header;
+
+    background-color: #1e1e1e;
+    background-image: url(../img/navimg.jpeg);
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;   
+    opacity: 95%; 
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .game-button {
+    background-color: #c43f3f;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 0px #a13333;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .game-button:hover {
+    background-color: chartreuse;
+    box-shadow: 0px 2px 0px #751c1c;
+    transform: translateY(2px);
+  }
+
+  .brand-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logoimg {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.9s ease-in-out;
+  }
+  
+  .logoimg:hover{    
+    transition: background-color .5s;
+    transform: translateY(-10px);
+  }
+
+  .main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 15px;
+    overflow-y: scroll;
+    background-image: url(../img/backimg.jpg);
+    
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+    
+    gap: 15px ;
+    
+  }
+  
+  .product {
+    border: #1e1e1e solid 1px;
+    border-radius: 25px;
+    box-shadow: 8px 10px 42px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 8px 10px 42px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 8px 10px 42px -2px rgba(0,0,0,0.75);
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    opacity: 85%;
+    transition: all 0.3s ease-in-out;
+    height: 40rem; 
+  }
+
+  .product:hover {
+    transform: translateY(-10px); /* Desplazamos el elemento hacia arriba al hacer hover */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Agregamos una sombra para dar profundidad */
+  }
+
+  .product img {
+    width: 18rem;
+    height: 21rem;
+    border-radius: 25px 25px 0 0;
+    object-fit: cover;
+  }
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    align-items: center;
+    height: 8rem;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  .footer ul {
+    display: flex;
+    color: white;
+  }
+  
+  .grid-container {
+    display: grid; /* a diferencia de flex. usamos grid */
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: auto 1fr; /* LO RECOMENDADO Y COMO MEJOR PRÁCTICA */
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header header"
+      "sidebar main main  "
+      "footer footer footer ";
+  }
+  
+  .grid-container footer {
+    align-items: flex-end;
+    background-color: #1e1e1e;
+  }
+  
+  .box {
+    border: solid 1px black;
+  }
+
+
+  @media (max-width: 768px) 
+{
+    .products-grid {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+     
+      
+    }
+    .product {
+      width: 100%;
+        
+  }
+  
+}
+
+
+/* Aquí se agregan los estilos para los dispositivos móviles */
+@media (max-width: 768px) 
+{
+    .products-grid {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin-top: 0px;
+    }
+    .product {
+        width: 100%;
+  }
+  
+  .product-info{
+    height: 210px;
+  }
+
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .logoimg {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    header ul li{
+      display: none;
+    }
+
+    header h3{
+      display: none;
+    }
+  
+    .ui-btn {
+      display: block;
+      margin-top: 1px;
+      text-align: center;
+    }
+    
+  }
+
